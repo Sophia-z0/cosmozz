@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sophia Zolnowski</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #f5f0e8;
+    --ink: #1a1814;
+    --ink-muted: #6b6558;
+    --accent: #8b5e3c;
+  }
+
+  html, body {
+    height: 100%;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  header {
+    padding: 4rem 6vw 3rem;
+    border-bottom: 0.5px solid rgba(26,24,20,0.15);
+  }
+
+  .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    letter-spacing: 0.04em;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .tagline {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  nav { display: none; }
+
+  main {
+    flex: 1;
+    padding: 5rem 6vw;
+    max-width: 900px;
+  }
+
+  .intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 300;
+    line-height: 1.55;
+    color: var(--ink);
+    max-width: 680px;
+    margin-bottom: 4rem;
+  }
+
+  .intro em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: rgba(26,24,20,0.15);
+    border: 0.5px solid rgba(26,24,20,0.15);
+  }
+
+  .project-card {
+    padding: 2rem;
+    aspect-ratio: 1;
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: background 0.25s;
+  }
+
+  .project-card:hover {
+    background: rgba(26,24,20,0.04);
+  }
+
+  .project-card::after {
+    content: '→';
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 1rem;
+    color: var(--accent);
+    opacity: 0;
+    transform: translate(-4px, 4px);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+
+  .project-card:hover::after {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  .project-num {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--ink-muted);
+    margin-bottom: auto;
+  }
+
+  .project-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 300;
+    line-height: 1.05;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-type {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  footer {
+    padding: 2rem 6vw;
+    border-top: 0.5px solid rgba(26,24,20,0.1);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    color: var(--ink-muted);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1 class="name">Sophia Zolnowski</h1>
+  <p class="tagline">Aspirante documentariste &nbsp;·&nbsp; Chroniques cinéma</p>
+</header>
+
+<nav></nav>
+
+<main>
+  <p class="intro">
+    Une pratique du regard.<br>
+    Des territoires traversés, des liens tissés,<br>
+    des <em>présences</em> documentées.
+  </p>
+
+  <div class="projects">
+    <a class="project-card" href="scenius/index.html">
+      <span class="project-num">01</span>
+      <span class="project-title">Scenius</span>
+      <span class="project-type">Projet documentaire · 2021</span>
+    </a>
+    <a class="project-card" href="lechateau/index.html">
+      <span class="project-num">02</span>
+      <span class="project-title">Le Château</span>
+      <span class="project-type">Projet documentaire · Casablanca</span>
+    </a>
+    <a class="project-card" href="impressions/index.html">
+      <span class="project-num">03</span>
+      <span class="project-title">Impressions</span>
+      <span class="project-type">Photographie</span>
+    </a>
+    <a class="project-card" href="radio/index.html">
+      <span class="project-num">04</span>
+      <span class="project-title">Cinérama</span>
+      <span class="project-type">Chroniques radio · RPH FM</span>
+    </a>
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 Sophia Zolnowski &nbsp;·&nbsp; cosmozz.com
+</footer>
+
+</body>
+</html>
