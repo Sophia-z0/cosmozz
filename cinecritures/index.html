@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Impressions — Sophia Zolnowski</title>
+<title>Cinécritures — Sophia Zolnowski</title>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root { --cream:#f5f0e8; --ink:#1a1814; --ink-muted:#6b6558; --accent:#8b5e3c; --border:rgba(26,24,20,0.15); }
@@ -20,16 +20,17 @@ header { padding:3rem 6vw 2.5rem; border-bottom:0.5px solid var(--border); }
 main { padding:3rem 6vw 5rem; max-width:780px; }
 .project-header { margin-bottom:2.5rem; padding-bottom:2rem; border-bottom:0.5px solid var(--border); }
 .pnum { font-size:0.62rem; letter-spacing:0.2em; color:var(--ink-muted); margin-bottom:0.5rem; }
-h1 { font-size:clamp(2.2rem,6vw,4rem); font-weight:300; letter-spacing:0.06em; text-transform:uppercase; line-height:1; margin-bottom:1rem; }
+.cine-logo { display:block; max-width:320px; margin-bottom:1.2rem; }
 .meta { display:flex; gap:2rem; flex-wrap:wrap; }
 .meta-item { font-size:0.65rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--ink-muted); }
 .meta-item span { color:var(--ink); }
+.visuel { width:100%; max-width:680px; height:auto; display:block; margin:2rem 0; border:0.5px solid rgba(26,24,20,0.1); }
 .body-text { font-size:0.9rem; line-height:1.8; color:var(--ink); margin-bottom:1.5rem; max-width:660px; text-align:justify; }
 .body-text em { font-style:italic; color:var(--accent); }
-.media-notice { margin-top:3rem; padding:1.5rem 2rem; border:0.5px solid var(--border); display:flex; align-items:flex-start; gap:1rem; }
-.dot { width:5px; height:5px; border-radius:50%; background:var(--accent); margin-top:0.4rem; flex-shrink:0; animation:pulse 2.5s ease-in-out infinite; }
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.25} }
-.media-notice p { font-size:0.75rem; letter-spacing:0.06em; color:var(--ink-muted); line-height:1.7; }
+.intervenants { margin:2rem 0; display:flex; flex-direction:column; gap:1px; background:var(--border); border:0.5px solid var(--border); }
+.intervenant { padding:1.5rem; background:var(--cream); }
+.intervenant-name { font-size:0.85rem; font-weight:400; letter-spacing:0.08em; margin-bottom:0.4rem; }
+.intervenant-bio { font-size:0.82rem; color:var(--ink-muted); line-height:1.7; text-align:justify; }
 footer { padding:1.8rem 6vw; border-top:0.5px solid rgba(26,24,20,0.08); font-size:0.62rem; letter-spacing:0.15em; color:var(--ink-muted); }
 footer a { color:inherit; text-decoration:none; }
 </style>
@@ -50,26 +51,39 @@ footer a { color:inherit; text-decoration:none; }
 
 <main>
   <div class="project-header">
-    <p class="pnum">04</p>
-    <h1>Impressions</h1>
+    <p class="pnum">05</p>
     <div class="meta">
-      <div class="meta-item">Type &nbsp;<span>Photographie</span></div>
-      <div class="meta-item">Format &nbsp;<span>Argentique & numérique</span></div>
-      <div class="meta-item">Période &nbsp;<span>2008 – en cours</span></div>
+      <div class="meta-item">Type &nbsp;<span>Atelier · Écriture & cinéma</span></div>
+      <div class="meta-item">Lieu &nbsp;<span>La Causotte</span></div>
+      <div class="meta-item">Fréquence &nbsp;<span>1er mercredi du mois</span></div>
     </div>
   </div>
 
+  <img class="visuel" src="visuel.jpg" alt="L'atelier Cinécritures — La Causotte">
+
   <p class="body-text">
-    Des images accumulées au fil des années, sans projet déclaré — argentique, numérique, privé. Des moments saisis par envie, ou parce qu'il fallait les saisir, pour ne pas les laisser s'échapper.
+    <em>Cinécritures</em> est un atelier d'exploration entre le verbe et l'image — une invitation à créer sans prérequis, que l'on soit amoureux·se des mots, des images ou plus largement de l'art. Né en marge de <em>Cinérama</em>, émission diffusée sur une quarantaine de radios locales en France (localement : RPH SUD et Divergence FM).
   </p>
 
   <p class="body-text">
-    Une sélection qui a survécu aux pertes, aux vols, aux disques durs et cartes SD qui lâchent, aux déménagements, à l'oubli.
+    Né d'un amour commun pour le sensible, la poésie qu'elle soit dans les livres ou portée à l'écran, et de l'envie de partager nos regards. Une expérience par et pour le collectif.
   </p>
 
-  <div class="media-notice">
-    <div class="dot"></div>
-    <p>Sélection en cours de mise en ligne.</p>
+  <div class="intervenants">
+    <div class="intervenant">
+      <p class="intervenant-name">Lisa Sanchez</p>
+      <p class="intervenant-bio">Poétesse et écrivaine publiée, animatrice d'ateliers d'écriture. Elle a quitté le journalisme il y a cinq ans pour se consacrer à la création — pour elle et pour les autres.</p>
+    </div>
+    <div class="intervenant">
+      <p class="intervenant-name">Sophia Zolnowski</p>
+      <p class="intervenant-bio">Formée à l'histoire de l'art et au cinéma, créatrice de récits audiovisuels, chroniqueuse cinéma pour l'émission Cinérama. Elle gravite autour de formes de création plurielles et embarque avec elle les autres.</p>
+    </div>
+  </div>
+<div class="info-item"><strong>Durée</strong>2h30</div>
+      <div class="info-item"><strong>Participants</strong>5 à 10 personnes</div>
+      <div class="info-item"><strong>Tarif</strong>30 €</div>
+      <div class="info-item"><strong>Lieu</strong>La Causotte</div>
+    </div>
   </div>
 </main>
 

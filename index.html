@@ -4,156 +4,74 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sophia Zolnowski</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root { --cream:#f5f0e8; --ink:#1a1814; --ink-muted:#6b6558; --accent:#8b5e3c; --border:rgba(26,24,20,0.15); }
+html,body { background:var(--cream); color:var(--ink); font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-weight:300; }
+body { display:flex; flex-direction:column; min-height:100vh; }
 
-  :root {
-    --cream: #f5f0e8;
-    --ink: #1a1814;
-    --ink-muted: #6b6558;
-    --accent: #8b5e3c;
-  }
+header { padding:3rem 6vw 2.5rem; border-bottom:0.5px solid var(--border); }
+.name { font-size:clamp(2rem,5vw,3.5rem); font-weight:300; letter-spacing:0.06em; text-transform:uppercase; line-height:1; margin-bottom:0.35rem; }
+.tagline { font-size:0.65rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--ink-muted); }
+.header-nav { padding:1.2rem 6vw; border-bottom:0.5px solid var(--border); display:flex; gap:2.5rem; }
+.header-nav a { font-size:0.65rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink-muted); text-decoration:none; transition:color 0.2s; }
+.header-nav a:hover { color:var(--ink); }
 
-  html, body {
-    height: 100%;
-    background: var(--cream);
-    color: var(--ink);
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300;
-  }
+main { flex:1; padding:4rem 6vw; }
 
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+.intro { font-size:clamp(1rem,2vw,1.2rem); font-weight:300; line-height:1.7; color:var(--ink); max-width:600px; margin-bottom:3.5rem; }
+.intro em { font-style:italic; color:var(--accent); }
 
-  header {
-    padding: 4rem 6vw 3rem;
-    border-bottom: 0.5px solid rgba(26,24,20,0.15);
-  }
+.section-label { font-size:0.62rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--ink-muted); margin-bottom:1px; padding-bottom:0.6rem; border-bottom:0.5px solid var(--border); }
 
-  .name {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: clamp(2.8rem, 6vw, 5rem);
-    letter-spacing: 0.04em;
-    line-height: 1;
-    margin-bottom: 0.4rem;
-  }
+.projects {
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(260px,1fr));
+  gap:1px;
+  background:var(--border);
+  border:0.5px solid var(--border);
+  margin-bottom:1px;
+}
 
-  .tagline {
-    font-size: 0.72rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-  }
+.project-card {
+  padding:2rem;
+  aspect-ratio:1;
+  text-decoration:none;
+  color:var(--ink);
+  background:var(--cream);
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  transition:background 0.2s;
+}
+.project-card:hover { background:rgba(26,24,20,0.04); }
+.project-card::after { content:'→'; position:absolute; bottom:2rem; right:2rem; font-size:0.9rem; color:var(--accent); opacity:0; transform:translate(-4px,4px); transition:opacity 0.2s,transform 0.2s; }
+.project-card:hover::after { opacity:1; transform:translate(0,0); }
 
-  nav { display: none; }
+.project-card.coming { background:var(--cream); cursor:default; pointer-events:none; }
+.project-card.coming .pnum,
+.project-card.coming .ptitle,
+.project-card.coming .ptype { color:rgba(107,101,88,0.4); font-weight:300; }
+.project-card.coming::after { display:none; }
 
-  main {
-    flex: 1;
-    padding: 5rem 6vw;
-    max-width: 900px;
-  }
+.pnum { font-size:0.62rem; letter-spacing:0.2em; color:var(--ink-muted); margin-bottom:auto; }
+.ptitle { font-size:clamp(1.4rem,2.5vw,2rem); font-weight:300; letter-spacing:0.04em; text-transform:uppercase; line-height:1.05; margin-bottom:0.5rem; }
+.ptype { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-muted); }
 
-  .intro {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.4rem, 3vw, 2rem);
-    font-weight: 300;
-    line-height: 1.55;
-    color: var(--ink);
-    max-width: 680px;
-    margin-bottom: 4rem;
-  }
-
-  .intro em {
-    font-style: italic;
-    color: var(--accent);
-  }
-
-  .projects {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    background: rgba(26,24,20,0.15);
-    border: 0.5px solid rgba(26,24,20,0.15);
-  }
-
-  .project-card {
-    padding: 2rem;
-    aspect-ratio: 1;
-    text-decoration: none;
-    color: var(--ink);
-    background: var(--cream);
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    transition: background 0.25s;
-  }
-
-  .project-card:hover {
-    background: rgba(26,24,20,0.04);
-  }
-
-  .project-card::after {
-    content: '→';
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
-    font-size: 1rem;
-    color: var(--accent);
-    opacity: 0;
-    transform: translate(-4px, 4px);
-    transition: opacity 0.2s, transform 0.2s;
-  }
-
-  .project-card:hover::after {
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-
-  .project-num {
-    font-size: 0.65rem;
-    letter-spacing: 0.2em;
-    color: var(--ink-muted);
-    margin-bottom: auto;
-  }
-
-  .project-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.8rem, 3vw, 2.6rem);
-    font-weight: 300;
-    line-height: 1.05;
-    margin-bottom: 0.5rem;
-  }
-
-  .project-type {
-    font-size: 0.68rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-  }
-
-  footer {
-    padding: 2rem 6vw;
-    border-top: 0.5px solid rgba(26,24,20,0.1);
-    font-size: 0.65rem;
-    letter-spacing: 0.15em;
-    color: var(--ink-muted);
-  }
+footer { padding:1.8rem 6vw; border-top:0.5px solid rgba(26,24,20,0.08); font-size:0.62rem; letter-spacing:0.15em; color:var(--ink-muted); margin-top:auto; }
 </style>
 </head>
 <body>
 
 <header>
-  <h1 class="name">Sophia Zolnowski</h1>
-  <p class="tagline">Aspirante documentariste &nbsp;·&nbsp; Chroniques cinéma</p>
-</header>
-
-<nav></nav>
+  <div>
+    <p class="name"><a href="index.html" style="text-decoration:none;color:inherit;">Sophia Zolnowski</a></p>
+    <p class="tagline">Aspirante documentariste &nbsp;·&nbsp; Chroniqueuse cinéma</p>
+  </div></header>
+  <nav class="header-nav">
+    <a href="index.html">Travaux</a>
+    <a href="apropos/index.html">À propos</a>
+  </nav>
 
 <main>
   <p class="intro">
@@ -164,25 +82,35 @@
 
   <div class="projects">
     <a class="project-card" href="scenius/index.html">
-      <span class="project-num">01</span>
-      <span class="project-title">Scenius</span>
-      <span class="project-type">Projet documentaire · 2021</span>
+      <span class="pnum">01</span>
+      <span class="ptitle">Scenius</span>
+      <span class="ptype">Projet documentaire · 2021</span>
     </a>
     <a class="project-card" href="lechateau/index.html">
-      <span class="project-num">02</span>
-      <span class="project-title">Le Château</span>
-      <span class="project-type">Projet documentaire · Casablanca</span>
-    </a>
-    <a class="project-card" href="impressions/index.html">
-      <span class="project-num">03</span>
-      <span class="project-title">Impressions</span>
-      <span class="project-type">Photographie</span>
+      <span class="pnum">02</span>
+      <span class="ptitle">Le Château</span>
+      <span class="ptype">Projet documentaire · Casablanca</span>
     </a>
     <a class="project-card" href="radio/index.html">
-      <span class="project-num">04</span>
-      <span class="project-title">Cinérama</span>
-      <span class="project-type">Chroniques radio · RPH FM</span>
+      <span class="pnum">03</span>
+      <span class="ptitle">Cinérama</span>
+      <span class="ptype">Chroniques radio · RPH FM</span>
     </a>
+    <a class="project-card" href="impressions/index.html">
+      <span class="pnum">04</span>
+      <span class="ptitle">Impressions</span>
+      <span class="ptype">Argentique & numérique · 2008 – en cours</span>
+    </a>
+    <a class="project-card" href="cinecritures/index.html">
+      <span class="pnum">05</span>
+      <span class="ptitle">Cinécritures</span>
+      <span class="ptype">Atelier · Écriture & cinéma</span>
+    </a>
+    <div class="project-card coming">
+      <span class="pnum">—</span>
+      <span class="ptitle">À suivre…</span>
+      <span class="ptype"></span>
+    </div>
   </div>
 </main>
 
