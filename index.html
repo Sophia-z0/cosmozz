@@ -62,6 +62,26 @@ main { flex:1; padding:4rem 6vw; }
 footer { padding:1.8rem 6vw; border-top:0.5px solid rgba(26,24,20,0.08); font-size:0.62rem; letter-spacing:0.15em; color:var(--ink-muted); margin-top:auto; }
 @media (max-width:700px) { .projects { grid-template-columns:repeat(2, 1fr); } }
 @media (max-width:480px) { .projects { grid-template-columns:1fr; } }
+
+  .project-card .card-bg {
+  position:absolute;
+  inset:0;
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transition:opacity 0.4s ease;
+}
+.project-card .card-bg::after {
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(26,24,20,0.45);
+}
+.project-card:hover .card-bg { opacity:1; }
+.project-card.has-hover:hover .pnum,
+.project-card.has-hover:hover .ptitle,
+.project-card.has-hover:hover .ptype { color:var(--cream); position:relative; z-index:1; }
+.project-card.has-hover:hover::after { color:rgba(245,240,232,0.7); z-index:1; }
 </style>
 </head>
 <body>
@@ -89,11 +109,12 @@ footer { padding:1.8rem 6vw; border-top:0.5px solid rgba(26,24,20,0.08); font-si
       <span class="ptitle">Scenius</span>
       <span class="ptype">Projet documentaire · MTP, Larzac</span>
     </a>
-    <a class="project-card" href="lechateau/index.html">
-      <span class="pnum">02</span>
-      <span class="ptitle">Le Château</span>
-      <span class="ptype">Projet documentaire · Casablanca</span>
-    </a>
+    <a class="project-card has-hover" href="lechateau/index.html">
+  <div class="card-bg" style="background-image:url('lechateau/hover.jpg')"></div>
+  <span class="pnum">02</span>
+  <span class="ptitle">Le Château</span>
+  <span class="ptype">Projet documentaire · Casablanca</span>
+</a>
     <a class="project-card" href="radio/index.html">
       <span class="pnum">03</span>
       <span class="ptitle">Cinérama</span>
