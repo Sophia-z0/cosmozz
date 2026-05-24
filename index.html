@@ -26,7 +26,8 @@ main { flex:1; padding:4rem 6vw; }
 
 .projects {
   display:grid;
-  grid-template-columns:repeat(auto-fill, minmax(260px,1fr));
+  grid-template-columns:repeat(3, 1fr);
+
   gap:1px;
   background:var(--border);
   border:0.5px solid var(--border);
@@ -48,17 +49,19 @@ main { flex:1; padding:4rem 6vw; }
 .project-card::after { content:'→'; position:absolute; bottom:2rem; right:2rem; font-size:0.9rem; color:var(--accent); opacity:0; transform:translate(-4px,4px); transition:opacity 0.2s,transform 0.2s; }
 .project-card:hover::after { opacity:1; transform:translate(0,0); }
 
-.project-card.coming { background:var(--cream); cursor:default; pointer-events:none; }
+.project-card.coming { background:var(--cream); cursor:default; pointer-events:none; border:none; }
 .project-card.coming .pnum,
 .project-card.coming .ptitle,
 .project-card.coming .ptype { color:rgba(107,101,88,0.4); font-weight:300; }
 .project-card.coming::after { display:none; }
 
-.pnum { font-size:0.62rem; letter-spacing:0.2em; color:var(--ink-muted); margin-bottom:auto; }
-.ptitle { font-size:clamp(1.4rem,2.5vw,2rem); font-weight:300; letter-spacing:0.04em; text-transform:uppercase; line-height:1.05; margin-bottom:0.5rem; }
+.pnum { font-size:0.62rem; letter-spacing:0.2em; color:var(--ink-muted); }
+.ptitle { font-size:clamp(1.4rem,2.5vw,2rem); font-weight:300; letter-spacing:0.04em; text-transform:uppercase; line-height:1.05; margin-bottom:0.4rem; margin-top:auto; }
 .ptype { font-size:0.62rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--ink-muted); }
 
 footer { padding:1.8rem 6vw; border-top:0.5px solid rgba(26,24,20,0.08); font-size:0.62rem; letter-spacing:0.15em; color:var(--ink-muted); margin-top:auto; }
+@media (max-width:700px) { .projects { grid-template-columns:repeat(2, 1fr); } }
+@media (max-width:480px) { .projects { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -115,7 +118,7 @@ footer { padding:1.8rem 6vw; border-top:0.5px solid rgba(26,24,20,0.08); font-si
 </main>
 
 <footer>
-  &copy; 2026 Sophia Zolnowski &nbsp;·&nbsp; cosmozz.com
+  &copy; 2025 Sophia Zolnowski &nbsp;·&nbsp; cosmozz.com
 </footer>
 
 </body>
