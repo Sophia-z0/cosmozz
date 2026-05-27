@@ -45,7 +45,7 @@ main { flex:1; padding:4rem 6vw; }
   position:relative;
   transition:background 0.2s;
 }
-.project-card:hover { background:rgba(26,24,20,0.04); }
+.project-card:hover { background:var(--cream); }
 .project-card::after { content:'→'; position:absolute; bottom:2rem; right:2rem; font-size:0.9rem; color:var(--accent); opacity:0; transform:translate(-4px,4px); transition:opacity 0.2s,transform 0.2s; }
 .project-card:hover::after { opacity:1; transform:translate(0,0); }
 
@@ -83,7 +83,7 @@ footer { padding:1.8rem 6vw; border-top:0.5px solid rgba(26,24,20,0.08); font-si
 .project-card.has-hover:hover .ptype { color:var(--cream); position:relative; z-index:1; }
 .project-card.has-hover:hover::after { color:rgba(245,240,232,0.7); z-index:1; }
 
-.project-card .card-bg-static { opacity:0.4; }
+.project-card .card-bg-static { opacity:0.15; }
 .project-card:hover .card-bg-static { opacity:0; }
 .project-card .card-bg-hover { opacity:0; }
 .project-card:hover .card-bg-hover { opacity:1; }
